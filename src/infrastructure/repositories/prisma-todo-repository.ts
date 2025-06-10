@@ -38,7 +38,7 @@ export class PrismaTodoRepository implements TodoRepository {
 
   async findAll(): Promise<Todo[]> {
     const todos = await prisma.todo.findMany();
-    return todos.map((todo : any) => ({
+    return todos.map((todo : Todo) => ({
       id: todo.id,
       title: todo.title,
       completed: todo.completed,
